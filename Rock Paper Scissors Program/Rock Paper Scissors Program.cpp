@@ -2,10 +2,45 @@
 //
 
 #include <iostream>
+#include <string>
+
+std::string player;
+
+//string player;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    char choice = '0';
+    while (choice == '0')
+    {
+        std::cout << "Press R or r for rock" << std::endl;
+        std::cout << "Press P or p for paper" << std::endl;
+        std::cout << "Press S or s for scissors" << std::endl;
+
+        std::cin >> choice;
+        std::cout << choice;
+
+        if (choice == 'R' || choice == 'r')
+        {
+            player = "rock";
+        }
+
+        else if (choice == 'P' || choice == 'p')
+        {
+            player = "Paper";
+        }
+
+        else if (choice == 'S' || choice == 's')
+        {
+            player = "Scissors";
+        }
+
+        else
+        {
+            choice = '0';
+            std::cout << "Please enter a valid value \n";
+        }
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
