@@ -19,10 +19,10 @@ char PlayerRPS()
         std::cout << "Press R or r for rock" << std::endl;
         std::cout << "Press P or p for paper" << std::endl;
         std::cout << "Press S or s for scissors" << std::endl;
-        std::cout << "Press Q or q to quit" << std::endl;
+        std::cout << "Press Q or q to quit" << std::endl << std::endl;
 
         std::cin >> choice;
-        std::cout << choice << std::endl;
+        //std::cout << choice << std::endl;
 
         if (choice == 'R' || choice == 'r')
         {
@@ -175,13 +175,13 @@ void result()
 
 int main()
 {
-    char Hum_player = '0';
+    //char Hum_player = '0';
 
-    while (Hum_player != 'q')
+    while (1)
     {
-        Hum_player = PlayerRPS();
+        char Hum_player = PlayerRPS();
 
-        if (Hum_player == 'q')
+        if (Hum_player == 'q'|| Hum_player == 'Q')
         {
             break;
         }
