@@ -11,19 +11,6 @@ std::string player;
 int compscore = 0;
 int playerscore = 0;
 
-int main()
-{
-    char player;
-    
-    player = PlayerRPS();
-    std::cout << player;
-
-    CompRPS();
-    WhoWon(char choice,char compchoice);
-    
-
-}
-
 char PlayerRPS()
 {
     char choice = '0';
@@ -154,6 +141,20 @@ void WhoWon(char choice, char compchoice)
                     }
                     break;
     }
+}
+
+int main()
+{
+    //char choice = '0';
+    //char comp
+
+    PlayerRPS();
+    std::cout << player;
+
+    CompRPS();
+    WhoWon(char choice, char compchoice);
+
+
 }
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
