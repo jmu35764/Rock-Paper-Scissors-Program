@@ -44,7 +44,7 @@ char PlayerRPS()
         }
     }
 
-    std::cout << player;
+    std::cout << "You chose " << player << std::endl;
     return 0;
 }
 char CompRPS()
@@ -56,22 +56,22 @@ char CompRPS()
     if (uid(rd) == 1)
     {
         compchoice = 'r';
-        std::cout << "rock \n";
+        std::cout << "The computer chose rock \n";
     }
 
     else if (uid(rd) == 2)
     {
         compchoice = 'p';
-        std::cout << "paper \n";
+        std::cout << "The computer chose paper \n";
     }
 
     else
     {
         compchoice = 's';
-        std::cout << "scissors \n";
+        std::cout << "The computer chose scissors \n";
     }
-
-    return compchoice;
+    //std::cout << "The computer chose " << 
+    return 0;
 
 }
 
@@ -148,11 +148,11 @@ int main()
     //char choice = '0';
     //char comp
 
-    PlayerRPS();
-    std::cout << player;
+    char Hum_player = PlayerRPS();
+    //std::cout << player;
 
-    CompRPS();
-    WhoWon(char choice, char compchoice);
+    char comp = CompRPS();
+    WhoWon(Hum_player, comp);
 
 
 }
