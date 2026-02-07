@@ -3,12 +3,24 @@
 
 #include <iostream>
 #include <string>
+#include <random>
 
 std::string player;
 
 //string player;
+int compscore = 0;
+int playerscore = 0;
 
 int main()
+{
+    
+    //PlayerRPS();
+    //CompRPS();
+    
+
+}
+
+/*char PlayerRPS()
 {
     char choice = '0';
     while (choice == '0')
@@ -18,7 +30,7 @@ int main()
         std::cout << "Press S or s for scissors" << std::endl;
 
         std::cin >> choice;
-        std::cout << choice;
+        std::cout << choice << std::endl;
 
         if (choice == 'R' || choice == 'r')
         {
@@ -34,15 +46,101 @@ int main()
         {
             player = "Scissors";
         }
-
         else
         {
             choice = '0';
             std::cout << "Please enter a valid value \n";
         }
     }
+
+    std::cout << player;
+    return choice;
+}*/
+char CompRPS()
+{
+    std::random_device rd("default");
+    std::uniform_int_distribution uid(1, 3);
+    char compchoice;
+
+    if (uid(rd) == 1)
+    {
+        compchoice = 'r';
+        std::cout << "rock \n";
+    }
+
+    else if (uid(rd) == 2)
+    {
+        compchoice = 'p';
+        std::cout << "paper \n";
+    }
+
+    else
+    {
+        compchoice = 's';
+        std::cout << "scissors \n";
+    }
+
+    return compchoice;
+
 }
 
+void WhoWon(char choice, char compchoice)
+{
+    switch (choice)
+    {
+        case 'r':  if (compchoice == 'r')
+                    {
+                        std::cout << "It's a tie!" << std::endl;
+                    }
+
+                    if (compchoice == 'p')
+                    {
+                        std::cout << "Computer wins" << std::endl;
+                        compscore++;
+                    }
+
+                    else
+                    {
+                        std::cout << "Player winns" << std::endl;
+                        playerscore++;
+                    }
+
+        case 'p':  if (compchoice == 'r')
+                    {
+                        std::cout << "Player winns" << std::endl;
+                        playerscore++;
+                    }
+
+                    if (compchoice == 'p')
+                    {
+
+                        std::cout << "It's a tie!" << std::endl;
+                    }
+
+                    else
+                    {
+                        std::cout << "Computer wins" << std::endl;
+                        compscore++;
+                    }
+
+        case 's':  if (compchoice == 'r')
+                    {
+                        std::cout << "Computer wins" << std::endl;
+                        compscore++;
+                    }
+
+                    if (compchoice == 'p')
+                    {
+                        std::cout << "Player wins" << std::endl;
+                        playerscore++;
+                    }
+
+                    else
+                    {
+                        std::cout << "It's a tie!" << std::endl;
+                    }
+    }
+}
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
