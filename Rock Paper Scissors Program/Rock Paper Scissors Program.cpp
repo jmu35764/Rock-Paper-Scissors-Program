@@ -6,10 +6,37 @@
 #include <random>
 
 std::string player;
+char PlayerRPS();
+char CompRPS();
+void WhoWon(char choice, char compchoice);
+void result();
 
-//string player;
 int compscore = 0;
 int playerscore = 0;
+
+
+int main()
+{
+    //char Hum_player = '0';
+
+    while (1)
+    {
+        char Hum_player = PlayerRPS();
+
+        if (Hum_player == 'q' || Hum_player == 'Q')
+        {
+            break;
+        }
+
+        char comp = CompRPS();
+
+        WhoWon(Hum_player, comp);
+
+    }
+
+    result();
+}
+
 
 char PlayerRPS()
 {
@@ -151,11 +178,13 @@ void WhoWon(char choice, char compchoice)
                     }
                     break;
     }
+
+    std::cout << std::endl;
 }
 void result()
 {
     std::cout << "The player score is " << playerscore << std::endl;
-    std::cout << "The CPU scure is " << compscore << std::endl;
+    std::cout << "The CPU score is " << compscore << std::endl;
 
     if (playerscore > compscore)
     {
@@ -173,27 +202,7 @@ void result()
     }
 }
 
-int main()
-{
-    //char Hum_player = '0';
 
-    while (1)
-    {
-        char Hum_player = PlayerRPS();
-
-        if (Hum_player == 'q'|| Hum_player == 'Q')
-        {
-            break;
-        }
-
-        char comp = CompRPS();
-
-        WhoWon(Hum_player, comp);
-
-    }
-
-    result();
- }
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
