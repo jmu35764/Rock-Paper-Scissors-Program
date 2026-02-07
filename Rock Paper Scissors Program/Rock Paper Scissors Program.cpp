@@ -17,23 +17,26 @@ int playerscore = 0;
 
 int main()
 {
-    //char Hum_player = '0';
-
     while (1)
     {
+        //Set the value of the player's option based on the function
         char Hum_player = PlayerRPS();
 
+        //Break the loop if Quit is selected
         if (Hum_player == 'q' || Hum_player == 'Q')
         {
             break;
         }
 
+        //Set the value of the computer choice
         char comp = CompRPS();
 
+        //Checks who winds based on the player and computer input
         WhoWon(Hum_player, comp);
 
     }
 
+    //Shows the result
     result();
 }
 
@@ -41,6 +44,8 @@ int main()
 char PlayerRPS()
 {
     char choice = '0';
+
+    //Ensure loop continues to run until an invalid input is given
     while (choice == '0')
     {
         std::cout << "Press R or r for rock" << std::endl;
@@ -71,6 +76,7 @@ char PlayerRPS()
             player = "Quit";
         }
 
+        //Any invalid inputs set "choice" equal to 0
         else
         {
             choice = '0';
@@ -84,6 +90,8 @@ char PlayerRPS()
 char CompRPS()
 {
     std::random_device rd("default");
+
+    //Numbers 1-3 will be selected randomly
     std::uniform_int_distribution uid(1, 3);
     char compchoice;
 
@@ -104,14 +112,14 @@ char CompRPS()
         compchoice = 's';
         std::cout << "The computer chose scissors \n";
     }
-    //std::cout << "The computer chose " << 
+    
     return compchoice;
 
 }
 
 void WhoWon(char choice, char compchoice)
 {
-    //std::cout << "Who won code is running \n";
+    
 
     switch (choice)
     {
