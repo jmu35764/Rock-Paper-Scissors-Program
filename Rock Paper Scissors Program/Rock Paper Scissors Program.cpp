@@ -45,7 +45,7 @@ char PlayerRPS()
     }
 
     std::cout << "You chose " << player << std::endl;
-    return 0;
+    return choice;
 }
 char CompRPS()
 {
@@ -77,8 +77,11 @@ char CompRPS()
 
 void WhoWon(char choice, char compchoice)
 {
+    //std::cout << "Who won code is running \n";
+
     switch (choice)
     {
+        std::cout << "Who won code reached switch statement \n";
         case 'r':  if (compchoice == 'r')
                     {
                         std::cout << "It's a tie!" << std::endl;
@@ -149,7 +152,7 @@ int main()
     //char comp
 
     char Hum_player = PlayerRPS();
-    //std::cout << player;
+    std::cout << Hum_player;
 
     char comp = CompRPS();
     WhoWon(Hum_player, comp);
