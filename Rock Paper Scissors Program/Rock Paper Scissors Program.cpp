@@ -71,7 +71,7 @@ char CompRPS()
         std::cout << "The computer chose scissors \n";
     }
     //std::cout << "The computer chose " << 
-    return 0;
+    return compchoice;
 
 }
 
@@ -152,10 +152,13 @@ int main()
     //char comp
 
     char Hum_player = PlayerRPS();
-    std::cout << Hum_player;
+    //std::cout << Hum_player << std::endl;
 
     char comp = CompRPS();
+
     WhoWon(Hum_player, comp);
+    std::cout << "The player score is " << playerscore << std::endl;
+    std::cout << "The CPU scure is " << compscore << std::endl;
 
 
 }
