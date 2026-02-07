@@ -19,6 +19,7 @@ char PlayerRPS()
         std::cout << "Press R or r for rock" << std::endl;
         std::cout << "Press P or p for paper" << std::endl;
         std::cout << "Press S or s for scissors" << std::endl;
+        std::cout << "Press Q or q to quit" << std::endl;
 
         std::cin >> choice;
         std::cout << choice << std::endl;
@@ -37,6 +38,12 @@ char PlayerRPS()
         {
             player = "Scissors";
         }
+
+        else if (choice == 'Q' || choice == 'q')
+        {
+            player = "Quit";
+        }
+
         else
         {
             choice = '0';
@@ -150,15 +157,36 @@ int main()
 {
     //char choice = '0';
     //char comp
+    char Hum_player = '0';
 
-    char Hum_player = PlayerRPS();
-    //std::cout << Hum_player << std::endl;
+    while (Hum_player != 'q' || Hum_player != 'Q')
+    {
+        Hum_player = PlayerRPS();
+        //std::cout << Hum_player << std::endl;
 
-    char comp = CompRPS();
+        char comp = CompRPS();
 
-    WhoWon(Hum_player, comp);
+        WhoWon(Hum_player, comp);
+
+    }
+
     std::cout << "The player score is " << playerscore << std::endl;
     std::cout << "The CPU scure is " << compscore << std::endl;
+
+    if (playerscore > compscore)
+    {
+        std::cout << "You win! \n";
+    }
+
+    else if (playerscore < compscore)
+    {
+        std::cout << "CPU wins! \n";
+    }
+    
+    else
+    {
+        std::cout << "It's a tie! \n";
+    }
 
 
 }
