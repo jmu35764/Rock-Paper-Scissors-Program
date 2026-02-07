@@ -13,14 +13,18 @@ int playerscore = 0;
 
 int main()
 {
+    char player;
     
-    //PlayerRPS();
-    //CompRPS();
+    player = PlayerRPS();
+    std::cout << player;
+
+    CompRPS();
+    WhoWon(char choice,char compchoice);
     
 
 }
 
-/*char PlayerRPS()
+char PlayerRPS()
 {
     char choice = '0';
     while (choice == '0')
@@ -54,8 +58,8 @@ int main()
     }
 
     std::cout << player;
-    return choice;
-}*/
+    return 0;
+}
 char CompRPS()
 {
     std::random_device rd("default");
@@ -91,37 +95,46 @@ void WhoWon(char choice, char compchoice)
         case 'r':  if (compchoice == 'r')
                     {
                         std::cout << "It's a tie!" << std::endl;
+                        
                     }
 
                     if (compchoice == 'p')
                     {
                         std::cout << "Computer wins" << std::endl;
                         compscore++;
+                        
                     }
 
                     else
                     {
                         std::cout << "Player winns" << std::endl;
                         playerscore++;
+                     
                     }
+                    break;
+
 
         case 'p':  if (compchoice == 'r')
                     {
                         std::cout << "Player winns" << std::endl;
                         playerscore++;
+                        
                     }
 
                     if (compchoice == 'p')
                     {
 
                         std::cout << "It's a tie!" << std::endl;
+                        
                     }
 
                     else
                     {
                         std::cout << "Computer wins" << std::endl;
                         compscore++;
+                        
                     }
+                    break;
 
         case 's':  if (compchoice == 'r')
                     {
@@ -139,6 +152,7 @@ void WhoWon(char choice, char compchoice)
                     {
                         std::cout << "It's a tie!" << std::endl;
                     }
+                    break;
     }
 }
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
