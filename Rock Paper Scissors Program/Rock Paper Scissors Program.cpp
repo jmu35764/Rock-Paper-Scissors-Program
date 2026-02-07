@@ -102,9 +102,9 @@ void WhoWon(char choice, char compchoice)
                         
                     }
 
-                    else
+                    if (compchoice == 's')
                     {
-                        std::cout << "Player winns" << std::endl;
+                        std::cout << "Player wins" << std::endl;
                         playerscore++;
                      
                     }
@@ -113,7 +113,7 @@ void WhoWon(char choice, char compchoice)
 
         case 'p':  if (compchoice == 'r')
                     {
-                        std::cout << "Player winns" << std::endl;
+                        std::cout << "Player wins" << std::endl;
                         playerscore++;
                         
                     }
@@ -125,7 +125,7 @@ void WhoWon(char choice, char compchoice)
                         
                     }
 
-                    else
+                    if (compchoice == 's')
                     {
                         std::cout << "Computer wins" << std::endl;
                         compscore++;
@@ -145,31 +145,15 @@ void WhoWon(char choice, char compchoice)
                         playerscore++;
                     }
 
-                    else
+                    if (compchoice == 's')
                     {
                         std::cout << "It's a tie!" << std::endl;
                     }
                     break;
     }
 }
-
-int main()
+void result()
 {
-    //char choice = '0';
-    //char comp
-    char Hum_player = '0';
-
-    while (Hum_player != 'q' || Hum_player != 'Q')
-    {
-        Hum_player = PlayerRPS();
-        //std::cout << Hum_player << std::endl;
-
-        char comp = CompRPS();
-
-        WhoWon(Hum_player, comp);
-
-    }
-
     std::cout << "The player score is " << playerscore << std::endl;
     std::cout << "The CPU scure is " << compscore << std::endl;
 
@@ -182,14 +166,34 @@ int main()
     {
         std::cout << "CPU wins! \n";
     }
-    
+
     else
     {
         std::cout << "It's a tie! \n";
     }
-
-
 }
+
+int main()
+{
+    char Hum_player = '0';
+
+    while (Hum_player != 'q')
+    {
+        Hum_player = PlayerRPS();
+
+        if (Hum_player == 'q')
+        {
+            break;
+        }
+
+        char comp = CompRPS();
+
+        WhoWon(Hum_player, comp);
+
+    }
+
+    result();
+ }
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
