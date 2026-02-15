@@ -11,6 +11,7 @@ char CompRPS();
 void WhoWon(char choice, char compchoice);
 void result();
 
+//Global variables used to 
 int compscore = 0;
 int playerscore = 0;
 
@@ -120,11 +121,11 @@ char CompRPS()
 void WhoWon(char choice, char compchoice)
 {
     
-
+    //Function uses a "switch" statement with "if" statments inside to determine winner
+    //When a winner is determined, the score for that player will increase by 1
     switch (choice)
     {
-        std::cout << "Who won code reached switch statement \n";
-        case 'r':  if (compchoice == 'r')
+       case 'r':  if (compchoice == 'r')
                     {
                         std::cout << "It's a tie!" << std::endl;
                         
@@ -145,6 +146,26 @@ void WhoWon(char choice, char compchoice)
                     }
                     break;
 
+       case 'R':  if (compchoice == 'r')
+                {
+                    std::cout << "It's a tie!" << std::endl;
+
+                }
+
+               if (compchoice == 'p')
+               {
+                   std::cout << "Computer wins" << std::endl;
+                   compscore++;
+
+               }
+
+               if (compchoice == 's')
+               {
+                   std::cout << "Player wins" << std::endl;
+                   playerscore++;
+
+               }
+               break;
 
         case 'p':  if (compchoice == 'r')
                     {
@@ -168,6 +189,28 @@ void WhoWon(char choice, char compchoice)
                     }
                     break;
 
+        case 'P':  if (compchoice == 'r')
+                {
+                    std::cout << "Player wins" << std::endl;
+                    playerscore++;
+
+                }
+
+                if (compchoice == 'p')
+                {
+
+                    std::cout << "It's a tie!" << std::endl;
+
+                }
+
+                if (compchoice == 's')
+                {
+                    std::cout << "Computer wins" << std::endl;
+                    compscore++;
+
+                }
+                break;
+
         case 's':  if (compchoice == 'r')
                     {
                         std::cout << "Computer wins" << std::endl;
@@ -185,6 +228,24 @@ void WhoWon(char choice, char compchoice)
                         std::cout << "It's a tie!" << std::endl;
                     }
                     break;
+
+        case 'S':  if (compchoice == 'r')
+                {
+                    std::cout << "Computer wins" << std::endl;
+                    compscore++;
+                }
+
+                if (compchoice == 'p')
+                {
+                    std::cout << "Player wins" << std::endl;
+                    playerscore++;
+                }
+
+                if (compchoice == 's')
+                {
+                    std::cout << "It's a tie!" << std::endl;
+                }
+                break;
     }
 
     std::cout << std::endl;
@@ -194,6 +255,7 @@ void result()
     std::cout << "The player score is " << playerscore << std::endl;
     std::cout << "The CPU score is " << compscore << std::endl;
 
+    //Following "if" statements are used to determine who won the most rounds
     if (playerscore > compscore)
     {
         std::cout << "You win! \n";
@@ -209,15 +271,3 @@ void result()
         std::cout << "It's a tie! \n";
     }
 }
-
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
